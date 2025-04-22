@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Check, X, ArrowRight, Mail } from "lucide-react";
 import Header from "../components/Header";
@@ -62,58 +61,88 @@ const ServicePlans = () => {
               </TableHeader>
               <TableBody>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Suporte remoto</TableCell>
+                  <TableCell className="py-4 px-6">Assistência Remota</TableCell>
                   <TableCell className="py-4 px-6 text-center">Ilimitado</TableCell>
                   <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Ilimitado</TableCell>
                   <TableCell className="py-4 px-6 text-center">Ilimitado</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Documentação (relatórios)</TableCell>
+                  <TableCell className="py-4 px-6">Suporte inicial por telefone e email</TableCell>
                   <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Manutenção corretiva</TableCell>
+                  <TableCell className="py-4 px-6">Suporte remoto</TableCell>
+                  <TableCell className="py-4 px-6 text-center">3</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">6</TableCell>
+                  <TableCell className="py-4 px-6 text-center">9</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="py-4 px-6">Documentação de serviço (Relatórios, laudos, etc)</TableCell>
+                  <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
+                  <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="py-4 px-6">Prioridade em chamados de assistência</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Resposta em até 3 dias úteis</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Resposta em até 2 dias úteis</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Resposta em até 1 dia útil</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="py-4 px-6">Visitas para manutenção corretiva</TableCell>
                   <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">1 visita</TableCell>
-                  <TableCell className="py-4 px-6 text-center">2 visitas</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">1</TableCell>
+                  <TableCell className="py-4 px-6 text-center">2</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Treinamento</TableCell>
-                  <TableCell className="py-4 px-6 text-center">Operacional</TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">+ 2 consultorias remotas</TableCell>
-                  <TableCell className="py-4 px-6 text-center">Completo</TableCell>
+                  <TableCell className="py-4 px-6">Itens de Reposição</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Desconto em peças de reposição</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Desconto em peças + 3 meses de garantia no serviço</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Desconto em peças + 6 meses de garantia no serviço</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Auditorias</TableCell>
+                  <TableCell className="py-4 px-6">Treinamento Operacional e Aplicação</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Treinamento Operacional</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Treinamento Operacional e até 2 consultorias remotas de aplicação</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Treinamento Operacional e um treinamento de aplicação completo</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="py-4 px-6">Auditorias de desempenho trimestrais</TableCell>
                   <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><X size={20} className="text-red-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center">Trimestral</TableCell>
+                  <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Consultoria</TableCell>
-                  <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Inclui</TableCell>
-                  <TableCell className="py-4 px-6 text-center">Inclui</TableCell>
-                </TableRow>
-                <TableRow>
-                  <TableCell className="py-4 px-6">Manutenção anual</TableCell>
+                  <TableCell className="py-4 px-6">Consultoria para otimização de equipamentos</TableCell>
                   <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Prazo de pagamento</TableCell>
-                  <TableCell className="py-4 px-6 text-center">7 DDL</TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">15 DDL</TableCell>
-                  <TableCell className="py-4 px-6 text-center">30 DDL</TableCell>
+                  <TableCell className="py-4 px-6">Método de pagamento</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Até 7 DDL</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Até 15 DDL</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Até 30 DDL</TableCell>
                 </TableRow>
                 <TableRow>
-                  <TableCell className="py-4 px-6">Desconto em peças/upgrades</TableCell>
-                  <TableCell className="py-4 px-6 text-center">Até 5%</TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Até 7,5%</TableCell>
-                  <TableCell className="py-4 px-6 text-center">Até 10%</TableCell>
+                  <TableCell className="py-4 px-6">Visita Anual de Manutenção Geral</TableCell>
+                  <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
+                  <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="py-4 px-6">Descontos em Peças/Upgrades</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Até 2,5%</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Até 2,5% pe��as / 2,5% upgrades</TableCell>
+                  <TableCell className="py-4 px-6 text-center">Até 5% peças / 5% upgrades</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="py-4 px-6 font-bold">Total em Reais (R$)</TableCell>
+                  <TableCell className="py-4 px-6 text-center font-bold">45.000</TableCell>
+                  <TableCell className="py-4 px-6 text-center font-bold bg-[#FFF6F0]">65.500</TableCell>
+                  <TableCell className="py-4 px-6 text-center font-bold">90.000</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
@@ -144,7 +173,7 @@ const ServicePlans = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-[#2F2F2F] hover:bg-black text-white">
+                <Button className="w-full bg-[#F5791F] hover:bg-[#C86714] text-white">
                   Solicitar proposta
                 </Button>
               </CardFooter>
@@ -168,7 +197,7 @@ const ServicePlans = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-[#2F2F2F] hover:bg-black text-white">
+                <Button className="w-full bg-[#F5791F] hover:bg-[#C86714] text-white">
                   Solicitar proposta
                 </Button>
               </CardFooter>
@@ -191,7 +220,7 @@ const ServicePlans = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-[#2F2F2F] hover:bg-black text-white">
+                <Button className="w-full bg-[#F5791F] hover:bg-[#C86714] text-white">
                   Solicitar proposta
                 </Button>
               </CardFooter>
@@ -207,26 +236,38 @@ const ServicePlans = () => {
       <section className="py-16 bg-white">
         <div className="container-tennessine max-w-4xl">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#2F2F2F]">Termos e Condições</h2>
-          <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm mb-8">
-            <h3 className="text-xl font-bold mb-4">Cobertura dos Serviços</h3>
-            <p className="mb-4">Os serviços contratados abrangem apenas os itens explicitamente listados em cada plano. Qualquer serviço adicional estará sujeito a cobranças extras conforme tabela vigente.</p>
-          </div>
-          <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm mb-8">
-            <h3 className="text-xl font-bold mb-4">Acesso Técnico</h3>
-            <p className="mb-4">O cliente deve garantir acesso adequado aos equipamentos, incluindo permissões de segurança e liberação de acesso às instalações durante as visitas técnicas.</p>
-          </div>
-          <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm mb-8">
-            <h3 className="text-xl font-bold mb-4">Cancelamento</h3>
-            <p className="mb-4">A rescisão antecipada de contratos está sujeita a multa. A notificação de não renovação deve ser enviada com pelo menos 45 dias de antecedência do término do contrato vigente.</p>
-          </div>
-          <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm">
-            <h3 className="text-xl font-bold mb-4">Políticas de Manutenção e Treinamento</h3>
-            <ul className="space-y-2">
-              <li>• Peças de reposição são cobradas separadamente, com descontos conforme o plano contratado.</li>
-              <li>• Upgrades de software e hardware não estão inclusos em nenhum plano e são orçados separadamente.</li>
-              <li>• Treinamentos têm carga horária definida: Básico (4h), Avançado (8h) e Customizado (conforme necessidade).</li>
-              <li>• O número de visitas técnicas é limitado conforme cada plano.</li>
-            </ul>
+          <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm mb-8 space-y-6">
+            <div>
+              <h3 className="text-xl font-bold mb-2">Condições Gerais</h3>
+              <ul className="space-y-2">
+                <li>Este plano cobre apenas os itens listados. Quaisquer serviços adicionais serão cobrados separadamente.</li>
+                <li>O cliente é responsável por garantir o acesso aos equipamentos no momento da manutenção.</li>
+                <li>O pagamento deve ser efetuado conforme o logística adquirida.</li>
+                <li>O contrato pode ser rescindido com aviso prévio de 45 dias por qualquer uma das partes.</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Descontos</h3>
+              <p>Porcentagem de desconto sujeito à limitação de valor teto a depender do componente/linha.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Documentação de Serviço</h3>
+              <p>Apenas para serviços realizados presencialmente, principalmente para laudos de qualificação e afins.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Treinamento Operacional e de Aplicação</h3>
+              <p>Carga horária sujeita a variação de acordo com a linha/equipamento adquirido(a).</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Visitas para manutenção corretiva</h3>
+              <p>Visitas corretivas não englobam emergências, salvo exceções com cláusula em contrato vigente.</p>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-2">Visita de Manutenção Anual</h3>
+              <p>
+                Caso haja necessidade de substituição de partes que apresentem desgaste ou defeito no sistema, será feita consulta prévia do valor agregado.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -239,7 +280,7 @@ const ServicePlans = () => {
             Entre em contato com nossa equipe para uma análise personalizada das necessidades da sua organização.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-[#2F2F2F] hover:bg-black text-white font-medium flex items-center gap-2">
+            <Button size="lg" className="bg-[#F5791F] hover:bg-[#C86714] text-white font-medium flex items-center gap-2">
               Solicitar proposta personalizada <ArrowRight size={18} />
             </Button>
             <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-green-600 text-white px-8 py-3 hover:bg-green-700 transition-colors text-sm font-medium">
@@ -346,4 +387,5 @@ const ServicePlans = () => {
     </div>
   );
 };
+
 export default ServicePlans;

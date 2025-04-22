@@ -1,8 +1,88 @@
-
 import { Link } from "react-router-dom";
-import { ArrowRight, FileText, Users, Check, X } from "lucide-react";
+import { FlaskConical, Atom, LabFlask, ArrowRight, Users } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import { useRef, useState } from "react";
+
+const galleryImages = [
+  {
+    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+    alt: "Treinamento em bancada laboratório",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=600&q=80",
+    alt: "Instalação de equipamento",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+    alt: "Manutenção em laboratório industrial",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
+    alt: "Técnico operando equipamento de alta precisão",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=600&q=80",
+    alt: "Suporte em campo/fábrica",
+  },
+];
+
+const GalleryCarousel = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [scrollX, setScrollX] = useState(0);
+
+  const scroll = (dir: "left" | "right") => {
+    const node = scrollRef.current;
+    if (!node) return;
+    const slideWidth = node.firstElementChild?.clientWidth || 340;
+    const to = dir === "left" ? node.scrollLeft - slideWidth : node.scrollLeft + slideWidth;
+    node.scrollTo({ left: to, behavior: "smooth" });
+    setScrollX(to);
+  };
+
+  return (
+    <div className="relative">
+      <button
+        aria-label="Anterior"
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#F5791F] text-white rounded-full p-2 shadow-md hover:scale-110 transition-transform"
+        style={{ display: 'block' }}
+        onClick={() => scroll("left")}
+        type="button"
+      >
+        <ArrowRight className="rotate-180" />
+      </button>
+      <div
+        ref={scrollRef}
+        className="flex overflow-x-auto gap-6 pb-1 scroll-smooth"
+        style={{ scrollSnapType: 'x mandatory' }}
+      >
+        {galleryImages.map((img, i) => (
+          <div
+            key={img.src}
+            className="min-w-[340px] max-w-sm h-64 rounded-xl shadow bg-[#fafbfc] border border-[#E5E5E5] overflow-hidden flex items-center justify-center scroll-snap-align-start"
+            style={{ scrollSnapAlign: 'start' }}
+          >
+            <img
+              src={img.src}
+              alt={img.alt}
+              className="object-cover w-full h-full"
+              draggable={false}
+            />
+          </div>
+        ))}
+      </div>
+      <button
+        aria-label="Próximo"
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#F5791F] text-white rounded-full p-2 shadow-md hover:scale-110 transition-transform"
+        style={{ display: 'block' }}
+        onClick={() => scroll("right")}
+        type="button"
+      >
+        <ArrowRight />
+      </button>
+    </div>
+  );
+};
 
 const Services = () => {
   return (
@@ -31,8 +111,8 @@ const Services = () => {
             </div>
             <div className="flex justify-center lg:justify-end">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=600&q=80"
-                alt="Serviço técnico laboratório"
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=700&q=80"
+                alt="Laboratório de Pesquisa"
                 className="rounded-lg shadow-2xl object-cover w-full max-w-lg border-4 border-white"
               />
             </div>
@@ -47,7 +127,7 @@ const Services = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="service-card">
               <div className="flex justify-center mb-6">
-                <FileText size={48} className="text-[#F5791F]" />
+                <Atom size={48} className="text-[#F5791F]" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-center text-black">Consultoria Técnica & Execução</h3>
               <p className="text-[#333333] text-center">
@@ -56,7 +136,7 @@ const Services = () => {
             </div>
             <div className="service-card">
               <div className="flex justify-center mb-6">
-                <FileText size={48} className="text-[#F5791F]" />
+                <FlaskConical size={48} className="text-[#F5791F]" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-center text-black">Capacitação Técnica</h3>
               <p className="text-[#333333] text-center">
@@ -65,7 +145,7 @@ const Services = () => {
             </div>
             <div className="service-card">
               <div className="flex justify-center mb-6">
-                <FileText size={48} className="text-[#F5791F]" />
+                <LabFlask size={48} className="text-[#F5791F]" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-center text-black">Manutenção Estratégica</h3>
               <p className="text-[#333333] text-center">
@@ -97,27 +177,11 @@ const Services = () => {
         </div>
       </section>
       
-      {/* Galeria Section - substituir por carrossel simples, mas manter grid em fallback*/}
+      {/* Galeria Section - carrossel */}
       <section className="py-16 bg-white" id="gallery">
         <div className="container-tennessine">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Galeria de Serviços Realizados</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div className="rounded-xl shadow bg-[#fafbfc] border border-[#E5E5E5] overflow-hidden flex items-center justify-center h-64">
-              <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=80" alt="Treinamento em bancada laboratório" className="object-cover w-full h-full" />
-            </div>
-            <div className="rounded-xl shadow bg-[#fafbfc] border border-[#E5E5E5] overflow-hidden flex items-center justify-center h-64">
-              <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=400&q=80" alt="Instalação de equipamento" className="object-cover w-full h-full" />
-            </div>
-            <div className="rounded-xl shadow bg-[#fafbfc] border border-[#E5E5E5] overflow-hidden flex items-center justify-center h-64">
-              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Manutenção em laboratório industrial" className="object-cover w-full h-full" />
-            </div>
-            <div className="rounded-xl shadow bg-[#fafbfc] border border-[#E5E5E5] overflow-hidden flex items-center justify-center h-64">
-              <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Técnico operando equipamento" className="object-cover w-full h-full" />
-            </div>
-            <div className="rounded-xl shadow bg-[#fafbfc] border border-[#E5E5E5] overflow-hidden flex items-center justify-center h-64">
-              <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=400&q=80" alt="Suporte em campo fábrica" className="object-cover w-full h-full" />
-            </div>
-          </div>
+          <GalleryCarousel />
         </div>
       </section>
 
@@ -129,35 +193,35 @@ const Services = () => {
             <div className="plan-card border-t-4 border-t-[#E5E5E5]">
               <h3 className="text-xl font-bold mb-4 text-center text-[#2F2F2F]">Starter</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Suporte remoto</span></li>
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Treinamento básico</span></li>
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Atendimento padrão</span></li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Suporte remoto</li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Treinamento básico</li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Atendimento padrão</li>
               </ul>
               <div className="flex justify-center">
-                <Link to="/services/plans" className="bg-[#2F2F2F] hover:bg-[#F5791F] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
+                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#C86714] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
               </div>
             </div>
             <div className="plan-card border-t-4 border-t-[#F5791F] scale-105 shadow-lg">
               <div className="absolute top-0 right-0 bg-[#F5791F] text-white text-xs px-2 py-1 rounded-bl-lg">Recomendado</div>
               <h3 className="text-xl font-bold mb-4 text-center text-[#F5791F]">Standard</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>+ Visitas corretivas</span></li>
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>+ Consultorias remotas</span></li>
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Atendimento acelerado</span></li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Visitas corretivas</li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Consultorias remotas</li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Atendimento acelerado</li>
               </ul>
               <div className="flex justify-center">
-                <Link to="/services/plans" className="bg-[#2F2F2F] hover:bg-[#F5791F] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
+                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#C86714] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
               </div>
             </div>
             <div className="plan-card border-t-4 border-t-[#2F2F2F]">
               <h3 className="text-xl font-bold mb-4 text-center text-[#2F2F2F]">Premium</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>+ Auditorias trimestrais</span></li>
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>+ Treinamento de aplicação</span></li>
-                <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Atendimento prioritário</span></li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Auditorias trimestrais</li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Treinamento de aplicação</li>
+                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Atendimento prioritário</li>
               </ul>
               <div className="flex justify-center">
-                <Link to="/services/plans" className="bg-[#2F2F2F] hover:bg-[#F5791F] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
+                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#C86714] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
               </div>
             </div>
           </div>
