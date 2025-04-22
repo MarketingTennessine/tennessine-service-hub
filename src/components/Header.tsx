@@ -12,9 +12,6 @@ const Header = () => {
             className="h-12 w-auto"
             style={{ minWidth: 48 }}
           />
-          <span className="hidden md:inline text-[22px] font-bold text-white tracking-widest">
-            TENNESSINE
-          </span>
         </Link>
         <nav className="hidden md:flex space-x-8">
           <Link
