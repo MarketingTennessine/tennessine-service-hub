@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Check, X, ArrowRight, FileText, Phone, Mail } from "lucide-react";
+import { Check, X, ArrowRight, Mail } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Button } from "@/components/ui/button";
@@ -23,17 +23,17 @@ import {
 
 const ServicePlans = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#F8F8F8]">
       <Header />
-      
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#2F2F2F] to-[#444444] text-white py-16">
+      <section className="bg-gradient-to-r from-[#F5791F] to-[#E65A00] text-white py-16">
         <div className="container-tennessine">
           <div className="max-w-3xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               Compare os Planos de Serviço da Tennessine
             </h1>
-            <p className="text-lg mb-8 text-gray-200">
+            <p className="text-lg mb-8 text-white/90">
               Conheça em detalhes nossos planos de serviço e escolha a solução que melhor atende às necessidades da sua operação.
             </p>
           </div>
@@ -43,24 +43,20 @@ const ServicePlans = () => {
       {/* Comparison Table Section */}
       <section className="py-16 bg-white">
         <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12">Tabela de Comparação Técnica</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#2F2F2F]">Tabela de Comparação Técnica</h2>
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-1/4 py-4 px-6 text-left">Recursos</TableHead>
+                  <TableHead className="w-1/4 py-4 px-6 text-left">Recurso</TableHead>
                   <TableHead className="w-1/4 py-4 px-6 text-center">
                     <span className="block text-lg font-bold">Starter</span>
-                    <span className="block text-[#555555] text-sm">Básico</span>
                   </TableHead>
-                  <TableHead className="w-1/4 py-4 px-6 text-center bg-gray-50">
+                  <TableHead className="w-1/4 py-4 px-6 text-center bg-[#FFF6F0]">
                     <span className="block text-lg font-bold text-[#F5791F]">Standard</span>
-                    <span className="block text-[#555555] text-sm">Recomendado</span>
                   </TableHead>
                   <TableHead className="w-1/4 py-4 px-6 text-center">
                     <span className="block text-lg font-bold">Premium</span>
-                    <span className="block text-[#555555] text-sm">Avançado</span>
                   </TableHead>
                 </TableRow>
               </TableHeader>
@@ -68,55 +64,55 @@ const ServicePlans = () => {
                 <TableRow>
                   <TableCell className="py-4 px-6">Suporte remoto</TableCell>
                   <TableCell className="py-4 px-6 text-center">Ilimitado</TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50">Ilimitado</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Ilimitado</TableCell>
                   <TableCell className="py-4 px-6 text-center">Ilimitado</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Documentação (relatórios)</TableCell>
                   <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Manutenção corretiva</TableCell>
                   <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50">1 visita</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">1 visita</TableCell>
                   <TableCell className="py-4 px-6 text-center">2 visitas</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Treinamento</TableCell>
                   <TableCell className="py-4 px-6 text-center">Operacional</TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50">+ 2 consultorias remotas</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">+ 2 consultorias remotas</TableCell>
                   <TableCell className="py-4 px-6 text-center">Completo</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Auditorias</TableCell>
                   <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50"><X size={20} className="text-red-500 mx-auto" /></TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><X size={20} className="text-red-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center">Trimestral</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Consultoria</TableCell>
                   <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50">Inclui</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Inclui</TableCell>
                   <TableCell className="py-4 px-6 text-center">Inclui</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Manutenção anual</TableCell>
                   <TableCell className="py-4 px-6 text-center"><X size={20} className="text-red-500 mx-auto" /></TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                   <TableCell className="py-4 px-6 text-center"><Check size={20} className="text-green-500 mx-auto" /></TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Prazo de pagamento</TableCell>
                   <TableCell className="py-4 px-6 text-center">7 DDL</TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50">15 DDL</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">15 DDL</TableCell>
                   <TableCell className="py-4 px-6 text-center">30 DDL</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell className="py-4 px-6">Desconto em peças/upgrades</TableCell>
                   <TableCell className="py-4 px-6 text-center">Até 5%</TableCell>
-                  <TableCell className="py-4 px-6 text-center bg-gray-50">Até 7,5%</TableCell>
+                  <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Até 7,5%</TableCell>
                   <TableCell className="py-4 px-6 text-center">Até 10%</TableCell>
                 </TableRow>
               </TableBody>
@@ -126,15 +122,14 @@ const ServicePlans = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-16 bg-[#F8F8F8]">
+      <section className="py-16 bg-[#FAFAFA]">
         <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12">Informações Comerciais</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#2F2F2F]">Informações Comerciais</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Plano Starter */}
-            <Card className="border-t-4 border-gray-300">
+            <Card className="border-t-4 border-[#E5E5E5]">
               <CardHeader>
-                <CardTitle className="text-xl text-center">Starter</CardTitle>
+                <CardTitle className="text-xl text-center text-[#2F2F2F]">Starter</CardTitle>
                 <CardDescription className="text-center">Básico</CardDescription>
               </CardHeader>
               <CardContent>
@@ -143,18 +138,9 @@ const ServicePlans = () => {
                   <span className="text-[#555555]">/ano</span>
                 </div>
                 <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Suporte remoto ilimitado</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Documentação completa</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Treinamento operacional básico</span>
-                  </li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Suporte remoto ilimitado</span></li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Documentação completa</span></li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Treinamento operacional básico</span></li>
                 </ul>
               </CardContent>
               <CardFooter>
@@ -163,9 +149,8 @@ const ServicePlans = () => {
                 </Button>
               </CardFooter>
             </Card>
-            
             {/* Plano Standard */}
-            <Card className="border-t-4 border-[#F5791F] transform scale-105 shadow-lg">
+            <Card className="border-t-4 border-[#F5791F] scale-105 shadow-lg">
               <div className="absolute top-0 right-0 bg-[#F5791F] text-white text-xs px-2 py-1 rounded-bl-lg">Recomendado</div>
               <CardHeader>
                 <CardTitle className="text-xl text-center text-[#F5791F]">Standard</CardTitle>
@@ -177,31 +162,21 @@ const ServicePlans = () => {
                   <span className="text-[#555555]">/ano</span>
                 </div>
                 <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Tudo do Starter</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>1 visita para manutenção corretiva</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>2 consultorias técnicas remotas</span>
-                  </li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Tudo do Starter</span></li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>1 visita para manutenção corretiva</span></li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>2 consultorias técnicas remotas</span></li>
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button className="w-full bg-[#F5791F] hover:bg-[#E65A00] text-white">
+                <Button className="w-full bg-[#2F2F2F] hover:bg-black text-white">
                   Solicitar proposta
                 </Button>
               </CardFooter>
             </Card>
-            
             {/* Plano Premium */}
             <Card className="border-t-4 border-[#2F2F2F]">
               <CardHeader>
-                <CardTitle className="text-xl text-center">Premium</CardTitle>
+                <CardTitle className="text-xl text-center text-[#2F2F2F]">Premium</CardTitle>
                 <CardDescription className="text-center">Avançado</CardDescription>
               </CardHeader>
               <CardContent>
@@ -210,18 +185,9 @@ const ServicePlans = () => {
                   <span className="text-[#555555]">/ano</span>
                 </div>
                 <ul className="space-y-3 mb-6">
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Tudo do Standard</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>2 visitas para manutenção corretiva</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" />
-                    <span>Auditorias trimestrais</span>
-                  </li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Tudo do Standard</span></li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>2 visitas para manutenção corretiva</span></li>
+                  <li className="flex items-start gap-2"><Check size={20} className="text-green-500 mt-0.5 flex-shrink-0" /><span>Auditorias trimestrais</span></li>
                 </ul>
               </CardContent>
               <CardFooter>
@@ -231,7 +197,6 @@ const ServicePlans = () => {
               </CardFooter>
             </Card>
           </div>
-          
           <div className="mt-8 text-center text-sm text-[#555555]">
             <p>Valores estimados anuais, sujeitos a variação conforme linha de equipamento.</p>
           </div>
@@ -241,23 +206,19 @@ const ServicePlans = () => {
       {/* Terms and Conditions Section */}
       <section className="py-16 bg-white">
         <div className="container-tennessine max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Termos e Condições</h2>
-          
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#2F2F2F]">Termos e Condições</h2>
           <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm mb-8">
             <h3 className="text-xl font-bold mb-4">Cobertura dos Serviços</h3>
             <p className="mb-4">Os serviços contratados abrangem apenas os itens explicitamente listados em cada plano. Qualquer serviço adicional estará sujeito a cobranças extras conforme tabela vigente.</p>
           </div>
-          
           <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm mb-8">
             <h3 className="text-xl font-bold mb-4">Acesso Técnico</h3>
             <p className="mb-4">O cliente deve garantir acesso adequado aos equipamentos, incluindo permissões de segurança e liberação de acesso às instalações durante as visitas técnicas.</p>
           </div>
-          
           <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm mb-8">
             <h3 className="text-xl font-bold mb-4">Cancelamento</h3>
             <p className="mb-4">A rescisão antecipada de contratos está sujeita a multa. A notificação de não renovação deve ser enviada com pelo menos 45 dias de antecedência do término do contrato vigente.</p>
           </div>
-          
           <div className="bg-[#F8F8F8] rounded-lg p-8 shadow-sm">
             <h3 className="text-xl font-bold mb-4">Políticas de Manutenção e Treinamento</h3>
             <ul className="space-y-2">
@@ -278,7 +239,7 @@ const ServicePlans = () => {
             Entre em contato com nossa equipe para uma análise personalizada das necessidades da sua organização.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-[#F5791F] hover:bg-gray-100 font-medium flex items-center gap-2">
+            <Button size="lg" className="bg-[#2F2F2F] hover:bg-black text-white font-medium flex items-center gap-2">
               Solicitar proposta personalizada <ArrowRight size={18} />
             </Button>
             <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md bg-green-600 text-white px-8 py-3 hover:bg-green-700 transition-colors text-sm font-medium">
@@ -307,10 +268,82 @@ const ServicePlans = () => {
           </svg>
         </a>
       </div>
-
-      <Footer />
+      
+      {/* Cinza escuro no rodapé */}
+      <footer className="bg-[#2F2F2F] text-white py-12">
+        <div className="container-tennessine">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-bold mb-4">Tennessine</h3>
+              <p className="text-gray-300 mb-4">
+                Soluções que garantem a máxima eficiência e segurança em cada projeto.
+              </p>
+              <div className="flex space-x-4">
+                <a href="#" className="text-white hover:text-[#F5791F] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                  </svg>
+                </a>
+                <a href="#" className="text-white hover:text-[#F5791F] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </a>
+                <a href="#" className="text-white hover:text-[#F5791F] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Links Rápidos</h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link to="/services" className="text-gray-300 hover:text-[#F5791F] transition-colors">
+                    Serviços
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/services/plans" className="text-gray-300 hover:text-[#F5791F] transition-colors">
+                    Planos
+                  </Link>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-[#F5791F] transition-colors">
+                    Sobre Nós
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-gray-300 hover:text-[#F5791F] transition-colors">
+                    Contato
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-xl font-bold mb-4">Contato</h3>
+              <p className="text-gray-300 mb-2">
+                <span className="font-medium">Endereço:</span> Av. Exemplo, 1234, São Paulo, SP
+              </p>
+              <p className="text-gray-300 mb-2">
+                <span className="font-medium">Email:</span> contato@tennessine.com.br
+              </p>
+              <p className="text-gray-300">
+                <span className="font-medium">Telefone:</span> (11) 5555-5555
+              </p>
+            </div>
+          </div>
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>© {new Date().getFullYear()} Tennessine Instrumentação Analítica. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
-
 export default ServicePlans;
