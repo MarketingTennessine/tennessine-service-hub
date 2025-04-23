@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { FlaskConical, Atom, TestTube, ArrowRight, Users, Wrench } from "lucide-react";
 import Header from "../components/Header";
@@ -311,7 +310,7 @@ const Services = () => {
       {/* WhatsApp Button */}
       <div className="fixed bottom-6 right-6 z-50">
         <a
-          href="https://wa.me/5511999999999"
+          href="https://wa.me/5521998960117"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center w-14 h-14 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors"
