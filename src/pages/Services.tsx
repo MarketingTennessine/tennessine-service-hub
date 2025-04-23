@@ -7,23 +7,23 @@ import ServiceSection from "../components/ServiceSection";
 
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80",
+    src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805755.jpg",
     alt: "Treinamento em bancada laboratório",
   },
   {
-    src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=600&q=80",
+    src: "https://img.freepik.com/free-photo/medical-workers-analyzing-blood-samples_23-2149238949.jpg",
     alt: "Instalação de equipamento",
   },
   {
-    src: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80",
+    src: "https://img.freepik.com/free-photo/scientist-working-laboratory-with-test-tubes_23-2149351542.jpg",
     alt: "Manutenção em laboratório industrial",
   },
   {
-    src: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80",
+    src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805754.jpg",
     alt: "Técnico operando equipamento de alta precisão",
   },
   {
-    src: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=600&q=80",
+    src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2149013902.jpg",
     alt: "Suporte em campo/fábrica",
   },
 ];

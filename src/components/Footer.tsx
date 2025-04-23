@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -69,7 +68,7 @@ const Footer = () => {
               <span className="font-medium">Endereço:</span> Av. Exemplo, 1234, São Paulo, SP
             </p>
             <p className="text-gray-300 mb-2">
-              <span className="font-medium">Email:</span> contato@tennessine.com.br
+              <span className="font-medium">Email:</span> info@tennessine.com.br
             </p>
             <p className="text-gray-300">
               <span className="font-medium">Telefone:</span> (11) 5555-5555
