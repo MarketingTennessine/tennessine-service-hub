@@ -1,9 +1,10 @@
 
 import { Link } from "react-router-dom";
-import { FlaskConical, Atom, TestTube, ArrowRight, Users } from "lucide-react";
+import { FlaskConical, Atom, TestTube, ArrowRight, Users, Wrench } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useRef, useState } from "react";
+import ServiceSection from "../components/ServiceSection";
 
 const galleryImages = [
   {
@@ -99,21 +100,21 @@ const Services = () => {
                 Serviços Tennessine: Confiabilidade e Excelência em Cada Etapa
               </h1>
               <p className="text-lg mb-8 text-white/90">
-                Oferecemos soluções especializadas para garantir eficiência, segurança e desempenho em cada etapa do seu projeto — do laboratório à indústria.
+                Na Tennessine, oferecemos serviços pontuais e contratos de manutenção personalizados com cobertura em todo o Brasil.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/services/plans" className="bg-[#2F2F2F] hover:bg-black text-white px-6 py-2.5 rounded-md font-medium text-center">
-                  Solicite uma proposta
-                </Link>
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer" className="bg-[#E5E5E5] hover:bg-white text-[#2F2F2F] px-6 py-2.5 rounded-md font-medium text-center">
-                  Fale com um especialista
+                <a href="https://tennessine.com.br/contato" target="_blank" rel="noopener noreferrer" className="bg-[#2F2F2F] hover:bg-black text-white px-6 py-2.5 rounded-md font-medium text-center">
+                  Solicitar Serviços
                 </a>
+                <Link to="/services/plans" className="bg-[#E5E5E5] hover:bg-white text-[#2F2F2F] px-6 py-2.5 rounded-md font-medium text-center">
+                  Adesão a Planos
+                </Link>
               </div>
             </div>
             <div className="flex justify-center lg:justify-end">
               <img
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=700&q=80"
-                alt="Laboratório de Pesquisa"
+                alt="Laboratório Industrial"
                 className="rounded-lg shadow-2xl object-cover w-full max-w-lg border-4 border-white"
               />
             </div>
@@ -121,166 +122,188 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Benefícios-Chave Section */}
-      <section className="py-16 bg-white" id="benefits">
+      {/* Serviços Técnicos Section */}
+      <section className="py-16 bg-white">
         <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Benefícios-Chave</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="service-card">
-              <div className="flex justify-center mb-6">
-                <Atom size={48} className="text-[#F5791F]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-black">Consultoria Técnica & Execução</h3>
-              <p className="text-[#333333] text-center">
-                Serviços especializados para instalação, qualificação e suporte.
-              </p>
-            </div>
-            <div className="service-card">
-              <div className="flex justify-center mb-6">
-                <FlaskConical size={48} className="text-[#F5791F]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-black">Capacitação Técnica</h3>
-              <p className="text-[#333333] text-center">
-                Treinamentos operacionais e de aplicação conforme a demanda do cliente.
-              </p>
-            </div>
-            <div className="service-card">
-              <div className="flex justify-center mb-6">
-                <TestTube size={48} className="text-[#F5791F]" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-center text-black">Manutenção Estratégica</h3>
-              <p className="text-[#333333] text-center">
-                Manutenções corretivas e preventivas para confiabilidade dos ativos.
-              </p>
-            </div>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Nossos Serviços Técnicos</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ServiceSection
+              title="Manutenção Preventiva e Corretiva"
+              description="Com nossa manutenção preventiva, você evita paradas inesperadas e prolonga a vida útil dos seus instrumentos analíticos. A manutenção corretiva busca solucionar problemas após falhas, restabelecendo o funcionamento dos equipamentos com segurança e eficiência."
+              icon={<Wrench size={48} className="text-[#F5791F]" />}
+            />
+            <ServiceSection
+              title="Treinamentos e Capacitações"
+              description="Nossos técnicos e engenheiros são treinados pelos fabricantes, no Brasil e no exterior. Oferecemos treinamentos personalizados para atender às necessidades específicas do seu laboratório e capacitar sua equipe."
+              icon={<Users size={48} className="text-[#F5791F]" />}
+            />
+            <ServiceSection
+              title="Qualificação de Equipamentos"
+              description="Realizamos qualificações de instalação, operação e desempenho (IQ, OQ, PQ), garantindo a conformidade com normas e padrões de qualidade exigidos em ambientes regulatórios."
+              icon={<FlaskConical size={48} className="text-[#F5791F]" />}
+            />
+            <ServiceSection
+              title="Logística Integrada"
+              description="Oferecemos suporte logístico completo para transporte, consolidação de peças e apoio a importações/exportações. Isso garante rapidez e segurança em atendimentos que envolvem peças internacionais ou transporte técnico especializado."
+              icon={<TestTube size={48} className="text-[#F5791F]" />}
+            />
           </div>
         </div>
       </section>
 
-      {/* Depoimentos Section */}
-      <section className="py-16 bg-[#FAFAFA]" id="testimonials">
+      {/* Gallery Section */}
+      <section className="py-16 bg-[#FAFAFA]" id="gallery">
         <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Depoimentos</h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-white rounded-xl p-8 shadow-md border border-[#E5E5E5]">
-              <div className="flex justify-center mb-4">
-                <Users size={32} className="text-[#F5791F]" />
-              </div>
-              <p className="text-lg italic text-center mb-6 text-[#333333]">
-                "A Tennessine transformou nossa operação com sua excelência em serviços. A confiança que temos neles é inabalável! A equipe é sempre muito atenciosa e competente."
-              </p>
-              <div className="text-center">
-                <p className="font-bold text-[#2F2F2F]">João Silva</p>
-                <p className="text-[#AAA]">Gerente Técnico, Empresa XYZ</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      
-      {/* Galeria Section - carrossel */}
-      <section className="py-16 bg-white" id="gallery">
-        <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Galeria de Serviços Realizados</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Galeria de Serviços</h2>
           <GalleryCarousel />
         </div>
       </section>
 
-      {/* Planos Section */}
-      <section className="py-16 bg-[#FAFAFA]" id="plans">
+      {/* Plans Section */}
+      <section className="py-16 bg-white" id="plans">
         <div className="container-tennessine">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Nossos Planos</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="plan-card border-t-4 border-t-[#E5E5E5]">
+            <div className="plan-card">
               <h3 className="text-xl font-bold mb-4 text-center text-[#2F2F2F]">Starter</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Suporte remoto</li>
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Treinamento básico</li>
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Atendimento padrão</li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  Suporte remoto
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  Treinamento básico
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  Atendimento padrão
+                </li>
               </ul>
               <div className="flex justify-center">
-                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#C86714] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
+                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
+                  Compare os Planos
+                </Link>
               </div>
             </div>
             <div className="plan-card border-t-4 border-t-[#F5791F] scale-105 shadow-lg">
-              <div className="absolute top-0 right-0 bg-[#F5791F] text-white text-xs px-2 py-1 rounded-bl-lg">Recomendado</div>
+              <div className="absolute top-0 right-0 bg-[#F5791F] text-white text-xs px-2 py-1 rounded-bl-lg">
+                Recomendado
+              </div>
               <h3 className="text-xl font-bold mb-4 text-center text-[#F5791F]">Standard</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Visitas corretivas</li>
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Consultorias remotas</li>
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Atendimento acelerado</li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  + Visitas corretivas
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  + Consultoria remota
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  Atendimento acelerado
+                </li>
               </ul>
               <div className="flex justify-center">
-                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#C86714] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
+                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
+                  Compare os Planos
+                </Link>
               </div>
             </div>
-            <div className="plan-card border-t-4 border-t-[#2F2F2F]">
+            <div className="plan-card">
               <h3 className="text-xl font-bold mb-4 text-center text-[#2F2F2F]">Premium</h3>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Auditorias trimestrais</li>
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />+ Treinamento de aplicação</li>
-                <li className="flex items-start gap-2"><span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />Atendimento prioritário</li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  + Auditorias e consultorias
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  + Treinamento de aplicação
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
+                  Atendimento prioritário
+                </li>
               </ul>
               <div className="flex justify-center">
-                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#C86714] text-white px-6 py-2.5 rounded-md font-medium transition-colors">Compare os Planos</Link>
+                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
+                  Compare os Planos
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Form Section */}
-      <section className="py-16 bg-white" id="contact">
+      {/* Contact Forms Section */}
+      <section className="py-16 bg-[#FAFAFA]" id="contact">
         <div className="container-tennessine">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Entre em Contato</h2>
-          <div className="max-w-3xl mx-auto bg-[#FAFAFA] rounded-lg shadow-md p-8 border border-[#E5E5E5]">
-            <form>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-[#333] mb-1">Nome *</label>
-                  <input type="text" id="name" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md p-8 border border-[#E5E5E5]">
+              <h3 className="text-xl font-bold mb-6 text-center">Adesão aos Planos</h3>
+              <form className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-[#333] mb-1">Nome *</label>
+                    <input type="text" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#333] mb-1">Organização *</label>
+                    <input type="text" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
+                  </div>
                 </div>
                 <div>
-                  <label htmlFor="organization" className="block text-sm font-medium text-[#333] mb-1">Organização *</label>
-                  <input type="text" id="organization" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
+                  <label className="block text-sm font-medium text-[#333] mb-1">Departamento</label>
+                  <input type="text" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" />
                 </div>
-              </div>
-              <div className="mb-6">
-                <label htmlFor="department" className="block text-sm font-medium text-[#333] mb-1">Departamento</label>
-                <input type="text" id="department" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" />
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-[#333] mb-1">Telefone</label>
+                    <input type="tel" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#333] mb-1">E-mail *</label>
+                    <input type="email" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
+                  </div>
+                </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-[#333] mb-1">Telefone</label>
-                  <input type="tel" id="phone" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" />
+                  <label className="block text-sm font-medium text-[#333] mb-1">Localização *</label>
+                  <input type="text" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-[#333] mb-1">E-mail</label>
-                  <input type="email" id="email" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
+                  <label className="block text-sm font-medium text-[#333] mb-1">Plano de Interesse *</label>
+                  <select className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required>
+                    <option value="">Selecione um plano</option>
+                    <option value="starter">Starter</option>
+                    <option value="standard">Standard</option>
+                    <option value="premium">Premium</option>
+                  </select>
                 </div>
-              </div>
-              <div className="mb-6">
-                <label htmlFor="location" className="block text-sm font-medium text-[#333] mb-1">Localização *</label>
-                <input type="text" id="location" className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md" required />
-              </div>
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-[#333] mb-1">Mensagem</label>
-                <textarea id="message" rows={4} className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md"></textarea>
-              </div>
-              <div className="mb-6">
-                <div className="flex items-start">
-                  <input id="terms" type="checkbox" className="h-4 w-4 accent-[#F5791F] mt-1" required />
-                  <label htmlFor="terms" className="ml-2 text-sm text-[#333]">
-                    Aceito os termos de privacidade e uso de dados para contato comercial
-                  </label>
+                <div className="flex justify-center pt-4">
+                  <button type="submit" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors">
+                    Solicitar Adesão ao Plano
+                  </button>
                 </div>
-              </div>
-              <div className="flex justify-center">
-                <button type="submit" className="bg-[#F5791F] hover:bg-[#C86714] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors">
-                  Enviar
-                </button>
-              </div>
-            </form>
+              </form>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-8 border border-[#E5E5E5] flex flex-col justify-center items-center text-center">
+              <h3 className="text-xl font-bold mb-6">Serviços Técnicos ou Contrato Personalizado</h3>
+              <p className="text-[#333333] mb-8">
+                Precisa de serviços pontuais ou um contrato personalizado? 
+                Entre em contato através do nosso formulário específico no site oficial.
+              </p>
+              <a
+                href="https://tennessine.com.br/contato"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors"
+              >
+                Solicitar Serviços Técnicos
+              </a>
+            </div>
           </div>
         </div>
       </section>

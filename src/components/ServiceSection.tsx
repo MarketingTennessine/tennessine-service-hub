@@ -1,0 +1,22 @@
+
+import { FC } from 'react';
+
+interface ServiceSectionProps {
+  title: string;
+  description: string;
+  icon: JSX.Element;
+}
+
+const ServiceSection: FC<ServiceSectionProps> = ({ title, description, icon }) => {
+  return (
+    <div className="service-card">
+      <div className="flex justify-center mb-6">
+        {icon}
+      </div>
+      <h3 className="text-xl font-bold mb-3 text-center text-black">{title}</h3>
+      <p className="text-[#333333] text-center">{description}</p>
+    </div>
+  );
+};
+
+export default ServiceSection;
