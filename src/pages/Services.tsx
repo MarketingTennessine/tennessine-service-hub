@@ -1,5 +1,6 @@
+
 import { Link } from "react-router-dom";
-import { FlaskConical, Atom, LabFlask, ArrowRight, Users } from "lucide-react";
+import { FlaskConical, Atom, TestTube, ArrowRight, Users } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useRef, useState } from "react";
@@ -145,7 +146,7 @@ const Services = () => {
             </div>
             <div className="service-card">
               <div className="flex justify-center mb-6">
-                <LabFlask size={48} className="text-[#F5791F]" />
+                <TestTube size={48} className="text-[#F5791F]" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-center text-black">Manutenção Estratégica</h3>
               <p className="text-[#333333] text-center">
