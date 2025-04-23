@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Check, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -190,7 +189,7 @@ const ServicePlans = () => {
           <div className="mt-16">
             <h2 className="text-3xl font-bold text-center mb-12">Termos e Condições</h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 container-tennessine">
               <div>
                 <h3 className="text-xl font-bold mb-4">Condições Gerais</h3>
                 <ul className="list-disc pl-5 space-y-2">
@@ -218,31 +217,31 @@ const ServicePlans = () => {
                 <p>Caso haja necessidade de substituição de partes que apresentem desgaste ou defeito no sistema, será feita consulta prévia do valor agregado.</p>
               </div>
             </div>
-          </div>
 
-          <div className="mt-16 text-center">
-            <h3 className="text-2xl font-bold mb-4">Pronto para escolher seu plano?</h3>
-            <p className="mb-8">Entre em contato com nossa equipe para uma análise personalizada das necessidades da sua organização.</p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a 
-                href="https://tennessine.com.br/?route=checkout/cotacao_servicos" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors"
-              >
-                Solicitar proposta personalizada
-              </a>
-              <a 
-                href="https://wa.me/5521998960117"
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors flex items-center justify-center"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                </svg>
-                Falar via WhatsApp
-              </a>
+            <div className="mt-16 text-center container-tennessine">
+              <h3 className="text-2xl font-bold mb-4">Pronto para escolher seu plano?</h3>
+              <p className="mb-8">Entre em contato com nossa equipe para uma análise personalizada das necessidades da sua organização.</p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <a 
+                  href="https://tennessine.com.br/contato" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors"
+                >
+                  Solicitar proposta personalizada
+                </a>
+                <a 
+                  href="https://wa.me/5521998960117"
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors flex items-center justify-center"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                  Falar via WhatsApp
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -8,23 +8,23 @@ import ServiceSection from "../components/ServiceSection";
 const galleryImages = [
   {
     src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805755.jpg",
-    alt: "Treinamento em bancada laboratório",
+    alt: "Cientista trabalhando em laboratório",
   },
   {
     src: "https://img.freepik.com/free-photo/medical-workers-analyzing-blood-samples_23-2149238949.jpg",
-    alt: "Instalação de equipamento",
+    alt: "Análise de amostras em laboratório",
   },
   {
     src: "https://img.freepik.com/free-photo/scientist-working-laboratory-with-test-tubes_23-2149351542.jpg",
-    alt: "Manutenção em laboratório industrial",
+    alt: "Pesquisador com tubos de ensaio",
   },
   {
     src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805754.jpg",
-    alt: "Técnico operando equipamento de alta precisão",
+    alt: "Equipamento de laboratório de alta precisão",
   },
   {
     src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2149013902.jpg",
-    alt: "Suporte em campo/fábrica",
+    alt: "Pesquisa científica em laboratório",
   },
 ];
 
@@ -295,7 +295,7 @@ const Services = () => {
                 Entre em contato através do nosso formulário específico no site oficial.
               </p>
               <a
-                href="https://tennessine.com.br/contato"
+                href="https://tennessine.com.br/?route=checkout/cotacao_servicos"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors"
