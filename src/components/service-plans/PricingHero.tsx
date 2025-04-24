@@ -1,9 +1,8 @@
-
 import React from 'react';
 
 const PricingHero = () => {
   return (
-    <section className="bg-gradient-to-r from-[#F5791F] to-[#E65A00] text-white py-16">
+    <section className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] text-white py-16">
       <div className="container-tennessine">
         <h1 className="text-4xl md:text-5xl font-bold mb-6 text-center">
           Compare os Planos de Serviço da Tennessine
