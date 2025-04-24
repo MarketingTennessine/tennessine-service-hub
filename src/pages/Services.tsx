@@ -112,8 +112,8 @@ const Services = () => {
             </div>
             <div className="flex justify-center lg:justify-end">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=700&q=80"
-                alt="Laboratório Industrial"
+                src="https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805755.jpg"
+                alt="Laboratório de Pesquisa Tennessine"
                 className="rounded-lg shadow-2xl object-cover w-full max-w-lg border-4 border-white"
               />
             </div>
