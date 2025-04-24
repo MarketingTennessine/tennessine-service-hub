@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, X } from "lucide-react";
+import { Check, X, ArrowRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
@@ -192,7 +192,7 @@ const ServicePlans = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 container-tennessine">
               <div>
                 <h3 className="text-xl font-bold mb-4">Condições Gerais</h3>
-                <ul className="list-disc pl-5 space-y-2">
+                <ul className="list-disc pl-5 space-y-2 text-gray-600">
                   <li>Este plano cobre apenas os itens listados. Quaisquer serviços adicionais serão cobrados separadamente.</li>
                   <li>O cliente é responsável por garantir o acesso aos equipamentos no momento da manutenção.</li>
                   <li>O pagamento deve ser efetuado conforme o logística adquirida.</li>
@@ -200,47 +200,42 @@ const ServicePlans = () => {
                 </ul>
                 
                 <h3 className="text-xl font-bold mt-8 mb-4">Descontos</h3>
-                <p>Porcentagem de desconto sujeito à limitação de valor teto a depender do componente/linha.</p>
+                <p className="text-gray-600">Porcentagem de desconto sujeito à limitação de valor teto a depender do componente/linha.</p>
               </div>
               
               <div>
                 <h3 className="text-xl font-bold mb-4">Documentação de Serviço</h3>
-                <p>Apenas para serviços realizados presencialmente, principalmente para laudos de qualificação e afins.</p>
+                <p className="text-gray-600">Apenas para serviços realizados presencialmente, principalmente para laudos de qualificação e afins.</p>
                 
                 <h3 className="text-xl font-bold mt-8 mb-4">Treinamento Operacional e de Aplicação</h3>
-                <p>Carga horária sujeita a variação de acordo com a linha/equipamento adquirido(a).</p>
+                <p className="text-gray-600">Carga horária sujeita a variação de acordo com a linha/equipamento adquirido(a).</p>
                 
                 <h3 className="text-xl font-bold mt-8 mb-4">Visitas para manutenção corretiva</h3>
-                <p>Visitas corretivas não englobam emergências, salvo exceções com cláusula em contrato vigente.</p>
+                <p className="text-gray-600">Visitas corretivas não englobam emergências, salvo exceções com cláusula em contrato vigente.</p>
                 
                 <h3 className="text-xl font-bold mt-8 mb-4">Visita de Manutenção Anual</h3>
-                <p>Caso haja necessidade de substituição de partes que apresentem desgaste ou defeito no sistema, será feita consulta prévia do valor agregado.</p>
+                <p className="text-gray-600">Caso haja necessidade de substituição de partes que apresentem desgaste ou defeito no sistema, será feita consulta prévia do valor agregado.</p>
               </div>
             </div>
 
             <div className="mt-16 text-center container-tennessine">
               <h3 className="text-2xl font-bold mb-4">Pronto para escolher seu plano?</h3>
-              <p className="mb-8">Entre em contato com nossa equipe para uma análise personalizada das necessidades da sua organização.</p>
+              <p className="mb-8 text-white/90 max-w-2xl mx-auto">Entre em contato com nossa equipe para uma análise personalizada das necessidades da sua organização.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a 
-                  href="https://tennessine.com.br/contato" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-gray-500 hover:bg-gray-600 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors"
+                <Button 
+                  variant="default"
+                  className="bg-gray-500 hover:bg-gray-600 text-white gap-2"
                 >
                   Solicitar proposta personalizada
-                </a>
-                <a 
-                  href="https://wa.me/5521998960117"
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors flex items-center justify-center"
+                  <ArrowRight className="h-5 w-5" />
+                </Button>
+                <Button 
+                  variant="default"
+                  className="bg-green-500 hover:bg-green-600 text-white gap-2"
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                  </svg>
                   Falar via WhatsApp
-                </a>
+                  <MessageSquare className="h-5 w-5" />
+                </Button>
               </div>
             </div>
           </div>
