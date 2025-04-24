@@ -7,24 +7,24 @@ import ServiceSection from "../components/ServiceSection";
 
 const galleryImages = [
   {
-    src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805755.jpg",
-    alt: "Cientista trabalhando em laboratório",
+    src: "/lovable-uploads/781e0e4c-cc97-4e67-8085-de72c65c4cc5.png",
+    alt: "Equipamento de laboratório IS20 com computador",
   },
   {
-    src: "https://img.freepik.com/free-photo/medical-workers-analyzing-blood-samples_23-2149238949.jpg",
-    alt: "Análise de amostras em laboratório",
+    src: "/lovable-uploads/b69698c7-eb96-4bf3-9411-c3a951d81500.png",
+    alt: "Equipe técnica com equipamento de laboratório",
   },
   {
-    src: "https://img.freepik.com/free-photo/scientist-working-laboratory-with-test-tubes_23-2149351542.jpg",
-    alt: "Pesquisador com tubos de ensaio",
+    src: "/lovable-uploads/f582b519-6ebe-4692-a771-cd58424d543f.png",
+    alt: "Sistema analítico avançado com equipe",
   },
   {
-    src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805754.jpg",
-    alt: "Equipamento de laboratório de alta precisão",
+    src: "/lovable-uploads/89c70a3b-bb51-43db-80fe-b6f4a6c9e349.png",
+    alt: "Equipamento de análise Falcon com interface",
   },
   {
-    src: "https://img.freepik.com/free-photo/scientist-working-laboratory_23-2149013902.jpg",
-    alt: "Pesquisa científica em laboratório",
+    src: "/lovable-uploads/b45f8ceb-4729-4dd1-b77c-0df3b5b7a816.png",
+    alt: "Equipe técnica com equipamento analítico",
   },
 ];
 
@@ -112,8 +112,8 @@ const Services = () => {
             </div>
             <div className="flex justify-center lg:justify-end">
               <img
-                src="https://img.freepik.com/free-photo/scientist-working-laboratory_23-2148805755.jpg"
-                alt="Laboratório de Pesquisa Tennessine"
+                src="/lovable-uploads/74fd2516-83e1-43b1-88ec-72a270abd913.png"
+                alt="Pesquisa científica avançada e inovação"
                 className="rounded-lg shadow-2xl object-cover w-full max-w-lg border-4 border-white"
               />
             </div>
