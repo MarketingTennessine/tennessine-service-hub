@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const PricingHero = () => {
@@ -8,7 +9,8 @@ const PricingHero = () => {
           Compare os Planos de Serviço da Tennessine
         </h1>
         <p className="text-lg mb-8 text-white/90 text-center max-w-3xl mx-auto">
-          Conheça em detalhes nossos planos de serviço e escolha a solução que melhor atende às necessidades da sua operação.
+          Escolha a solução ideal para o seu laboratório ou operação com planos desenvolvidos para garantir 
+          performance, segurança e suporte técnico especializado.
         </p>
       </div>
     </section>

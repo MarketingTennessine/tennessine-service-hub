@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Check, X } from "lucide-react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
@@ -6,13 +7,14 @@ const ComparisonTable = () => {
   return (
     <section className="py-16 bg-white">
       <div className="container-tennessine">
-        <h2 className="text-3xl font-bold text-center mb-12">Tabela de Comparação Técnica</h2>
+        <h2 className="text-3xl font-bold text-center mb-6">Compare nossos planos e escolha a solução ideal para o seu laboratório ou operação</h2>
+        <p className="text-center text-gray-600 mb-12 max-w-4xl mx-auto">Planos desenvolvidos para garantir performance, segurança e suporte técnico especializado em cada etapa do seu processo.</p>
         
         <div className="overflow-x-auto">
           <Table>
             <TableHeader>
               <TableRow>
-                <TableCell className="py-4 px-6 font-bold">Recurso</TableCell>
+                <TableCell className="py-4 px-6 font-bold">Categoria</TableCell>
                 <TableCell className="py-4 px-6 text-center font-bold">Starter</TableCell>
                 <TableCell className="py-4 px-6 text-center font-bold bg-[#FFF6F0]">Standard</TableCell>
                 <TableCell className="py-4 px-6 text-center font-bold">Premium</TableCell>
@@ -20,92 +22,51 @@ const ComparisonTable = () => {
             </TableHeader>
             <TableBody>
               <TableRow>
-                <TableCell className="py-4 px-6">Assistência Remota</TableCell>
-                <TableCell className="py-4 px-6 text-center">Ilimitado</TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Ilimitado</TableCell>
-                <TableCell className="py-4 px-6 text-center">Ilimitado</TableCell>
+                <TableCell className="py-4 px-6">Atendimento Técnico</TableCell>
+                <TableCell className="py-4 px-6 text-center">Suporte remoto essencial</TableCell>
+                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Atendimento remoto e presencial com prioridade</TableCell>
+                <TableCell className="py-4 px-6 text-center">Suporte completo personalizado</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="py-4 px-6">Suporte inicial por telefone e email</TableCell>
-                <TableCell className="py-4 px-6 text-center"><Check className="mx-auto" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check className="mx-auto" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center"><Check className="mx-auto" size={20} /></TableCell>
+                <TableCell className="py-4 px-6">Manutenção e Serviços</TableCell>
+                <TableCell className="py-4 px-6 text-center">Manutenção preventiva básica</TableCell>
+                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Manutenção preventiva e corretiva</TableCell>
+                <TableCell className="py-4 px-6 text-center">Soluções integradas de manutenção e otimização</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="py-4 px-6">Suporte remoto</TableCell>
-                <TableCell className="py-4 px-6 text-center">3</TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">6</TableCell>
-                <TableCell className="py-4 px-6 text-center">9</TableCell>
+                <TableCell className="py-4 px-6">Capacitação e Treinamento</TableCell>
+                <TableCell className="py-4 px-6 text-center">Treinamento operacional básico</TableCell>
+                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Treinamento operacional + consultorias técnicas</TableCell>
+                <TableCell className="py-4 px-6 text-center">Treinamento completo customizado</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="py-4 px-6">Documentação de serviço (Relatórios, laudos, etc)</TableCell>
-                <TableCell className="py-4 px-6 text-center"><Check className="mx-auto" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check className="mx-auto" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center"><Check className="mx-auto" size={20} /></TableCell>
+                <TableCell className="py-4 px-6">Relatórios e Documentação</TableCell>
+                <TableCell className="py-4 px-6 text-center">Relatórios padrões de atendimento</TableCell>
+                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Relatórios operacionais detalhados</TableCell>
+                <TableCell className="py-4 px-6 text-center">Relatórios customizados e auditorias</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="py-4 px-6">Prioridade em chamados de assistência</TableCell>
-                <TableCell className="py-4 px-6 text-center">Resposta em até 3 dias úteis</TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Resposta em até 2 dias úteis</TableCell>
-                <TableCell className="py-4 px-6 text-center">Resposta em até 1 dia útil</TableCell>
+                <TableCell className="py-4 px-6">Benefícios Comerciais</TableCell>
+                <TableCell className="py-4 px-6 text-center">Descontos em peças</TableCell>
+                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Garantia estendida + descontos adicionais</TableCell>
+                <TableCell className="py-4 px-6 text-center">Condições comerciais exclusivas</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="py-4 px-6">Visitas para manutenção corretiva</TableCell>
-                <TableCell className="py-4 px-6 text-center"><X className="mx-auto text-red-500" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">1</TableCell>
-                <TableCell className="py-4 px-6 text-center">2</TableCell>
+                <TableCell className="py-4 px-6">Investimento Estimado</TableCell>
+                <TableCell className="py-4 px-6 text-center">A partir de R$ 45 mil/ano</TableCell>
+                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">A partir de R$ 65 mil/ano</TableCell>
+                <TableCell className="py-4 px-6 text-center">Personalizado conforme necessidade</TableCell>
               </TableRow>
               <TableRow>
-                <TableCell className="py-4 px-6">Itens de Reposição</TableCell>
-                <TableCell className="py-4 px-6 text-center">Desconto em peças de reposição</TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Desconto em peças + 3 meses de garantia no serviço</TableCell>
-                <TableCell className="py-4 px-6 text-center">Desconto em peças + 6 meses de garantia no serviço</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="py-4 px-6">Treinamento Operacional e Aplicação</TableCell>
-                <TableCell className="py-4 px-6 text-center">Treinamento Operacional</TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Treinamento Operacional e até 2 consultorias remotas de aplicação</TableCell>
-                <TableCell className="py-4 px-6 text-center">Treinamento Operacional e um treinamento de aplicação completo</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="py-4 px-6">Auditorias de desempenho trimestrais</TableCell>
-                <TableCell className="py-4 px-6 text-center"><X className="mx-auto text-red-500" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><X className="mx-auto text-red-500" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center"><Check className="mx-auto" size={20} /></TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="py-4 px-6">Consultoria para otimização de equipamentos</TableCell>
-                <TableCell className="py-4 px-6 text-center"><X className="mx-auto text-red-500" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><X className="mx-auto text-red-500" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center"><Check className="mx-auto" size={20} /></TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="py-4 px-6">Método de pagamento</TableCell>
-                <TableCell className="py-4 px-6 text-center">Até 7 DDL</TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Até 15 DDL</TableCell>
-                <TableCell className="py-4 px-6 text-center">Até 30 DDL</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="py-4 px-6">Visita Anual de Manutenção Geral</TableCell>
-                <TableCell className="py-4 px-6 text-center"><X className="mx-auto text-red-500" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]"><Check className="mx-auto" size={20} /></TableCell>
-                <TableCell className="py-4 px-6 text-center"><Check className="mx-auto" size={20} /></TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="py-4 px-6">Descontos em Peças/Upgrades</TableCell>
-                <TableCell className="py-4 px-6 text-center">Até 2,5%</TableCell>
-                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Até 2,5% peças / 2,5% upgrades</TableCell>
-                <TableCell className="py-4 px-6 text-center">Até 5% peças / 5% upgrades</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell className="py-4 px-6 font-bold">Total em Reais (R$)</TableCell>
-                <TableCell className="py-4 px-6 text-center font-bold">45.000</TableCell>
-                <TableCell className="py-4 px-6 text-center font-bold bg-[#FFF6F0]">65.500</TableCell>
-                <TableCell className="py-4 px-6 text-center font-bold">90.000</TableCell>
+                <TableCell className="py-4 px-6">Indicação</TableCell>
+                <TableCell className="py-4 px-6 text-center">Operações de baixa complexidade</TableCell>
+                <TableCell className="py-4 px-6 text-center bg-[#FFF6F0]">Operações contínuas e estruturadas</TableCell>
+                <TableCell className="py-4 px-6 text-center">Ambientes críticos ou de alta performance</TableCell>
               </TableRow>
             </TableBody>
           </Table>
         </div>
+        <p className="text-center text-gray-500 mt-6">As características dos planos podem ser adaptadas conforme a necessidade de cada projeto. Solicite uma proposta personalizada para mais detalhes.</p>
       </div>
     </section>
   );

@@ -1,9 +1,13 @@
+
 import { Link } from "react-router-dom";
-import { FlaskConical, Atom, TestTube, ArrowRight, Users, Wrench } from "lucide-react";
+import { FlaskConical, Atom, TestTube, ArrowRight, Users, Wrench, MessageSquare, Truck, Star } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useRef, useState } from "react";
 import ServiceSection from "../components/ServiceSection";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 const galleryImages = [
   {
@@ -28,60 +32,80 @@ const galleryImages = [
   },
 ];
 
+const testimonials = [
+  {
+    content: "O suporte da Tennessine garantiu a continuidade da nossa operação com rapidez e qualidade incomparáveis.",
+    author: "Carla M.",
+    company: "Laboratório XYZ",
+  },
+  {
+    content: "Graças à equipe técnica da Tennessine, nosso laboratório opera com muito mais eficiência e confiabilidade.",
+    author: "Roberto S.",
+    company: "Instituto de Pesquisas ABC",
+  },
+  {
+    content: "A capacitação técnica fornecida pela Tennessine foi fundamental para otimizar nossos processos analíticos.",
+    author: "Patricia L.",
+    company: "Centro de Análises Químicas",
+  },
+  {
+    content: "O plano Premium superou nossas expectativas, especialmente no suporte contínuo e assistência técnica.",
+    author: "Marcelo D.",
+    company: "Indústria Farmacêutica",
+  },
+];
+
 const GalleryCarousel = () => {
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const [scrollX, setScrollX] = useState(0);
-
-  const scroll = (dir: "left" | "right") => {
-    const node = scrollRef.current;
-    if (!node) return;
-    const slideWidth = node.firstElementChild?.clientWidth || 340;
-    const to = dir === "left" ? node.scrollLeft - slideWidth : node.scrollLeft + slideWidth;
-    node.scrollTo({ left: to, behavior: "smooth" });
-    setScrollX(to);
-  };
-
   return (
-    <div className="relative">
-      <button
-        aria-label="Anterior"
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-[#F5791F] text-white rounded-full p-2 shadow-md hover:scale-110 transition-transform"
-        style={{ display: 'block' }}
-        onClick={() => scroll("left")}
-        type="button"
-      >
-        <ArrowRight className="rotate-180" />
-      </button>
-      <div
-        ref={scrollRef}
-        className="flex overflow-x-auto gap-6 pb-1 scroll-smooth"
-        style={{ scrollSnapType: 'x mandatory' }}
-      >
+    <Carousel className="w-full max-w-5xl mx-auto">
+      <CarouselContent>
         {galleryImages.map((img, i) => (
-          <div
-            key={img.src}
-            className="min-w-[340px] max-w-sm h-64 rounded-xl shadow bg-[#fafbfc] border border-[#E5E5E5] overflow-hidden flex items-center justify-center scroll-snap-align-start"
-            style={{ scrollSnapAlign: 'start' }}
-          >
-            <img
-              src={img.src}
-              alt={img.alt}
-              className="object-cover w-full h-full"
-              draggable={false}
-            />
-          </div>
+          <CarouselItem key={img.src} className="md:basis-1/2 lg:basis-1/3">
+            <div className="p-1">
+              <Card className="overflow-hidden">
+                <CardContent className="p-0 aspect-video">
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="object-cover w-full h-full"
+                    draggable={false}
+                  />
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
         ))}
-      </div>
-      <button
-        aria-label="Próximo"
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-[#F5791F] text-white rounded-full p-2 shadow-md hover:scale-110 transition-transform"
-        style={{ display: 'block' }}
-        onClick={() => scroll("right")}
-        type="button"
-      >
-        <ArrowRight />
-      </button>
-    </div>
+      </CarouselContent>
+      <CarouselPrevious className="left-1" />
+      <CarouselNext className="right-1" />
+    </Carousel>
+  );
+};
+
+const TestimonialsSection = () => {
+  return (
+    <Carousel className="w-full max-w-5xl mx-auto">
+      <CarouselContent>
+        {testimonials.map((testimonial, index) => (
+          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+            <div className="p-1">
+              <Card className="bg-white border border-gray-200 rounded-xl shadow-md h-full">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <MessageSquare className="text-[#F5791F] mb-4 h-8 w-8" />
+                  <p className="text-gray-700 italic mb-6">"{testimonial.content}"</p>
+                  <div className="mt-auto">
+                    <p className="font-bold text-gray-900">{testimonial.author}</p>
+                    <p className="text-gray-500 text-sm">{testimonial.company}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious className="left-1" />
+      <CarouselNext className="right-1" />
+    </Carousel>
   );
 };
 
@@ -91,7 +115,7 @@ const Services = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#F5791F] to-[#E65A00] text-white py-20">
+      <section className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] text-white py-20">
         <div className="container-tennessine">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -99,14 +123,14 @@ const Services = () => {
                 Serviços Tennessine: Confiabilidade e Excelência em Cada Etapa
               </h1>
               <p className="text-lg mb-8 text-white/90">
-                Na Tennessine, oferecemos serviços pontuais e contratos de manutenção personalizados com cobertura em todo o Brasil.
+                Contrate serviços técnicos, treinamentos ou manutenção especializada com suporte em todo o Brasil.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="https://tennessine.com.br/contato" target="_blank" rel="noopener noreferrer" className="bg-[#2F2F2F] hover:bg-black text-white px-6 py-2.5 rounded-md font-medium text-center">
-                  Solicitar Serviços
+                <a href="https://tennessine.com.br/?route=checkout/cotacao_servicos" target="_blank" rel="noopener noreferrer" className="bg-[#2F2F2F] hover:bg-black text-white px-6 py-2.5 rounded-md font-medium text-center">
+                  Quero solicitar um serviço
                 </a>
                 <Link to="/services/plans" className="bg-[#E5E5E5] hover:bg-white text-[#2F2F2F] px-6 py-2.5 rounded-md font-medium text-center">
-                  Adesão a Planos
+                  Quero escolher um plano
                 </Link>
               </div>
             </div>
@@ -122,31 +146,43 @@ const Services = () => {
       </section>
 
       {/* Serviços Técnicos Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-r from-[#d76512] to-[#f5a20a] text-white">
         <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Nossos Serviços Técnicos</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Nossos Serviços Técnicos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ServiceSection
               title="Manutenção Preventiva e Corretiva"
               description="Com nossa manutenção preventiva, você evita paradas inesperadas e prolonga a vida útil dos seus instrumentos analíticos. A manutenção corretiva busca solucionar problemas após falhas, restabelecendo o funcionamento dos equipamentos com segurança e eficiência."
-              icon={<Wrench size={48} className="text-[#F5791F]" />}
+              icon={<Wrench size={48} className="text-white" />}
+              isLight={true}
             />
             <ServiceSection
-              title="Treinamentos e Capacitações"
+              title="Treinamentos e Capacitações Sob Medida"
               description="Nossos técnicos e engenheiros são treinados pelos fabricantes, no Brasil e no exterior. Oferecemos treinamentos personalizados para atender às necessidades específicas do seu laboratório e capacitar sua equipe."
-              icon={<Users size={48} className="text-[#F5791F]" />}
+              icon={<Users size={48} className="text-white" />}
+              isLight={true}
             />
             <ServiceSection
               title="Qualificação de Equipamentos"
               description="Realizamos qualificações de instalação, operação e desempenho (IQ, OQ, PQ), garantindo a conformidade com normas e padrões de qualidade exigidos em ambientes regulatórios."
-              icon={<FlaskConical size={48} className="text-[#F5791F]" />}
+              icon={<FlaskConical size={48} className="text-white" />}
+              isLight={true}
             />
             <ServiceSection
-              title="Logística Integrada"
+              title="Soluções em Logística Integrada e Comércio Exterior"
               description="Oferecemos suporte logístico completo para transporte, consolidação de peças e apoio a importações/exportações. Isso garante rapidez e segurança em atendimentos que envolvem peças internacionais ou transporte técnico especializado."
-              icon={<TestTube size={48} className="text-[#F5791F]" />}
+              icon={<Truck size={48} className="text-white" />}
+              isLight={true}
             />
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16 bg-white" id="testimonials">
+        <div className="container-tennessine">
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">O Que Nossos Clientes Dizem</h2>
+          <TestimonialsSection />
         </div>
       </section>
 
@@ -163,70 +199,34 @@ const Services = () => {
         <div className="container-tennessine">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Nossos Planos</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="plan-card">
+            <div className="plan-card flex flex-col">
               <h3 className="text-xl font-bold mb-4 text-center text-[#2F2F2F]">Starter</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  Suporte remoto
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  Treinamento básico
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  Atendimento padrão
-                </li>
-              </ul>
-              <div className="flex justify-center">
+              <p className="text-center mb-4 font-medium">Suporte essencial e monitoramento básico</p>
+              <p className="text-center text-sm mb-6 text-gray-500">Ideal para demandas pontuais</p>
+              <div className="mt-auto flex justify-center">
                 <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
                   Compare os Planos
                 </Link>
               </div>
             </div>
-            <div className="plan-card border-t-4 border-t-[#F5791F] scale-105 shadow-lg">
+            <div className="plan-card border-t-4 border-t-[#F5791F] scale-105 shadow-lg flex flex-col">
               <div className="absolute top-0 right-0 bg-[#F5791F] text-white text-xs px-2 py-1 rounded-bl-lg">
                 Recomendado
               </div>
               <h3 className="text-xl font-bold mb-4 text-center text-[#F5791F]">Standard</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  + Visitas corretivas
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  + Consultoria remota
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  Atendimento acelerado
-                </li>
-              </ul>
-              <div className="flex justify-center">
+              <p className="text-center mb-4 font-medium">Atendimento preferencial + relatórios avançados</p>
+              <p className="text-center text-sm mb-6 text-gray-500">Ideal para operação contínua</p>
+              <div className="mt-auto flex justify-center">
                 <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
                   Compare os Planos
                 </Link>
               </div>
             </div>
-            <div className="plan-card">
+            <div className="plan-card flex flex-col">
               <h3 className="text-xl font-bold mb-4 text-center text-[#2F2F2F]">Premium</h3>
-              <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  + Auditorias e consultorias
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  + Treinamento de aplicação
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="inline-block w-3 h-3 bg-[#F5791F] rounded-full mt-2" />
-                  Atendimento prioritário
-                </li>
-              </ul>
-              <div className="flex justify-center">
+              <p className="text-center mb-4 font-medium">Soluções personalizadas + consultoria técnica contínua</p>
+              <p className="text-center text-sm mb-6 text-gray-500">Para estruturas exigentes e missão crítica</p>
+              <div className="mt-auto flex justify-center">
                 <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
                   Compare os Planos
                 </Link>
@@ -242,7 +242,8 @@ const Services = () => {
           <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Entre em Contato</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-8 border border-[#E5E5E5]">
-              <h3 className="text-xl font-bold mb-6 text-center">Adesão aos Planos</h3>
+              <h3 className="text-xl font-bold mb-4 text-center">Escolha o Plano Ideal para Seu Laboratório</h3>
+              <p className="mb-6 text-center text-gray-600">Solicite uma proposta personalizada com base nas suas necessidades e melhore a performance dos seus equipamentos.</p>
               <form className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -283,7 +284,7 @@ const Services = () => {
                 </div>
                 <div className="flex justify-center pt-4">
                   <button type="submit" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors">
-                    Solicitar Adesão ao Plano
+                    Quero escolher um plano
                   </button>
                 </div>
               </form>
@@ -300,7 +301,7 @@ const Services = () => {
                 rel="noopener noreferrer"
                 className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors"
               >
-                Solicitar Serviços Técnicos
+                Quero solicitar um serviço
               </a>
             </div>
           </div>
