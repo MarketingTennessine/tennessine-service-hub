@@ -1,6 +1,10 @@
 
 import React from 'react';
 
+interface PricingHeroProps {
+  // If any props are needed, they should be added here
+}
+
 const PricingHero = () => {
   return (
     <section className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] text-white py-16">
