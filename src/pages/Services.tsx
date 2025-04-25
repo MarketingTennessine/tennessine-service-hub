@@ -1,9 +1,7 @@
-
 import { Link } from "react-router-dom";
-import { FlaskConical, Atom, TestTube, ArrowRight, Users, Wrench, MessageSquare, Truck, Star } from "lucide-react";
+import { FlaskConical, Atom, TestTube, Users, Wrench, MessageSquare, Truck } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useRef, useState } from "react";
 import ServiceSection from "../components/ServiceSection";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
@@ -113,7 +111,7 @@ const Services = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-
+      
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] text-white py-20">
         <div className="container-tennessine">
@@ -146,33 +144,29 @@ const Services = () => {
       </section>
 
       {/* Serviços Técnicos Section */}
-      <section className="py-16 bg-gradient-to-r from-[#d76512] to-[#f5a20a] text-white">
+      <section className="py-16 bg-white" id="services">
         <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12">Nossos Serviços Técnicos</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#d76512]">Nossos Serviços Técnicos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <ServiceSection
               title="Manutenção Preventiva e Corretiva"
               description="Com nossa manutenção preventiva, você evita paradas inesperadas e prolonga a vida útil dos seus instrumentos analíticos. A manutenção corretiva busca solucionar problemas após falhas, restabelecendo o funcionamento dos equipamentos com segurança e eficiência."
-              icon={<Wrench size={48} className="text-white" />}
-              isLight={true}
+              icon={<Wrench size={48} />}
             />
             <ServiceSection
               title="Treinamentos e Capacitações Sob Medida"
               description="Nossos técnicos e engenheiros são treinados pelos fabricantes, no Brasil e no exterior. Oferecemos treinamentos personalizados para atender às necessidades específicas do seu laboratório e capacitar sua equipe."
-              icon={<Users size={48} className="text-white" />}
-              isLight={true}
+              icon={<Users size={48} />}
             />
             <ServiceSection
               title="Qualificação de Equipamentos"
               description="Realizamos qualificações de instalação, operação e desempenho (IQ, OQ, PQ), garantindo a conformidade com normas e padrões de qualidade exigidos em ambientes regulatórios."
-              icon={<FlaskConical size={48} className="text-white" />}
-              isLight={true}
+              icon={<FlaskConical size={48} />}
             />
             <ServiceSection
               title="Soluções em Logística Integrada e Comércio Exterior"
               description="Oferecemos suporte logístico completo para transporte, consolidação de peças e apoio a importações/exportações. Isso garante rapidez e segurança em atendimentos que envolvem peças internacionais ou transporte técnico especializado."
-              icon={<Truck size={48} className="text-white" />}
-              isLight={true}
+              icon={<Truck size={48} />}
             />
           </div>
         </div>
@@ -283,9 +277,9 @@ const Services = () => {
                   </select>
                 </div>
                 <div className="flex justify-center pt-4">
-                  <button type="submit" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors">
+                  <Link to="/services/plans#contact" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors">
                     Quero escolher um plano
-                  </button>
+                  </Link>
                 </div>
               </form>
             </div>

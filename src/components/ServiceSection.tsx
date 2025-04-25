@@ -5,17 +5,16 @@ interface ServiceSectionProps {
   title: string;
   description: string;
   icon: JSX.Element;
-  isLight?: boolean;
 }
 
-const ServiceSection: FC<ServiceSectionProps> = ({ title, description, icon, isLight = false }) => {
+const ServiceSection: FC<ServiceSectionProps> = ({ title, description, icon }) => {
   return (
-    <div className={`service-card ${isLight ? 'bg-transparent border-white/20 hover:bg-white/10' : ''}`}>
-      <div className="flex justify-center mb-6">
+    <div className="service-card">
+      <div className="flex justify-center mb-6 text-[#d76512]">
         {icon}
       </div>
-      <h3 className={`text-xl font-bold mb-3 text-center ${isLight ? 'text-white' : 'text-black'}`}>{title}</h3>
-      <p className={`text-center ${isLight ? 'text-white/90' : 'text-[#333333]'}`}>{description}</p>
+      <h3 className="text-xl font-bold mb-3 text-center text-[#d76512]">{title}</h3>
+      <p className="text-center text-[#333333]">{description}</p>
     </div>
   );
 };
