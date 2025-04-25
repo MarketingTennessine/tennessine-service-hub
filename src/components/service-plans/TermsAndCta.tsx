@@ -1,9 +1,24 @@
 
 import React from 'react';
+import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const TermsAndCta = () => {
+interface TermsAndCtaProps {
+  onRequestPlan: () => void;
+}
+
+const TermsAndCta = ({ onRequestPlan }: TermsAndCtaProps) => {
+  const { toast } = useToast();
+
+  const handlePlanRequest = () => {
+    onRequestPlan();
+    toast({
+      title: "Solicitação iniciada",
+      description: "Por favor, preencha o formulário para receber sua proposta personalizada.",
+    });
+  };
+
   return (
     <>
       <div className="mt-16 bg-gray-50 py-12 rounded-lg">
@@ -60,17 +75,24 @@ const TermsAndCta = () => {
               <Button 
                 variant="default"
                 className="bg-gray-600 hover:bg-gray-700 text-white gap-2 px-8 py-6 text-lg"
+                onClick={handlePlanRequest}
               >
                 Solicitar proposta personalizada
                 <ArrowRight className="h-5 w-5" />
               </Button>
-              <Button 
-                variant="default"
-                className="bg-green-500 hover:bg-green-600 text-white gap-2 px-8 py-6 text-lg"
+              <a
+                href="https://wa.me/5521998960117"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Falar via WhatsApp
-                <MessageSquare className="h-5 w-5" />
-              </Button>
+                <Button 
+                  variant="default"
+                  className="bg-green-500 hover:bg-green-600 text-white gap-2 px-8 py-6 text-lg w-full"
+                >
+                  Falar via WhatsApp
+                  <MessageSquare className="h-5 w-5" />
+                </Button>
+              </a>
             </div>
           </div>
         </div>

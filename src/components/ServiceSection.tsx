@@ -10,11 +10,11 @@ interface ServiceSectionProps {
 const ServiceSection: FC<ServiceSectionProps> = ({ title, description, icon }) => {
   return (
     <div className="service-card">
-      <div className="flex justify-center mb-6 text-[#d76512]">
+      <div className="flex justify-center mb-6">
         {icon}
       </div>
       <h3 className="text-xl font-bold mb-3 text-center text-[#d76512]">{title}</h3>
-      <p className="text-center text-[#333333]">{description}</p>
+      <p className="text-center text-gray-900">{description}</p>
     </div>
   );
 };

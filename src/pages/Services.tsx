@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { FlaskConical, Atom, TestTube, Users, Wrench, MessageSquare, Truck } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import ServiceSection from "../components/ServiceSection";
@@ -53,61 +54,24 @@ const testimonials = [
   },
 ];
 
-const GalleryCarousel = () => {
-  return (
-    <Carousel className="w-full max-w-5xl mx-auto">
-      <CarouselContent>
-        {galleryImages.map((img, i) => (
-          <CarouselItem key={img.src} className="md:basis-1/2 lg:basis-1/3">
-            <div className="p-1">
-              <Card className="overflow-hidden">
-                <CardContent className="p-0 aspect-video">
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    className="object-cover w-full h-full"
-                    draggable={false}
-                  />
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className="left-1" />
-      <CarouselNext className="right-1" />
-    </Carousel>
-  );
-};
-
-const TestimonialsSection = () => {
-  return (
-    <Carousel className="w-full max-w-5xl mx-auto">
-      <CarouselContent>
-        {testimonials.map((testimonial, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-            <div className="p-1">
-              <Card className="bg-white border border-gray-200 rounded-xl shadow-md h-full">
-                <CardContent className="p-6 flex flex-col h-full">
-                  <MessageSquare className="text-[#F5791F] mb-4 h-8 w-8" />
-                  <p className="text-gray-700 italic mb-6">"{testimonial.content}"</p>
-                  <div className="mt-auto">
-                    <p className="font-bold text-gray-900">{testimonial.author}</p>
-                    <p className="text-gray-500 text-sm">{testimonial.company}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious className="left-1" />
-      <CarouselNext className="right-1" />
-    </Carousel>
-  );
-};
-
 const Services = () => {
+  const { toast } = useToast();
+  
+  const handlePlanSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    toast({
+      title: "Solicitação enviada!",
+      description: "Em breve entraremos em contato.",
+    });
+  };
+
+  const scrollToComparison = () => {
+    const element = document.getElementById('comparison-table');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -148,25 +112,26 @@ const Services = () => {
         <div className="container-tennessine">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#d76512]">Nossos Serviços Técnicos</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Keep service sections but update icons color */}
             <ServiceSection
               title="Manutenção Preventiva e Corretiva"
               description="Com nossa manutenção preventiva, você evita paradas inesperadas e prolonga a vida útil dos seus instrumentos analíticos. A manutenção corretiva busca solucionar problemas após falhas, restabelecendo o funcionamento dos equipamentos com segurança e eficiência."
-              icon={<Wrench size={48} />}
+              icon={<Wrench size={48} className="text-[#d76512]" />}
             />
             <ServiceSection
               title="Treinamentos e Capacitações Sob Medida"
               description="Nossos técnicos e engenheiros são treinados pelos fabricantes, no Brasil e no exterior. Oferecemos treinamentos personalizados para atender às necessidades específicas do seu laboratório e capacitar sua equipe."
-              icon={<Users size={48} />}
+              icon={<Users size={48} className="text-[#d76512]" />}
             />
             <ServiceSection
               title="Qualificação de Equipamentos"
               description="Realizamos qualificações de instalação, operação e desempenho (IQ, OQ, PQ), garantindo a conformidade com normas e padrões de qualidade exigidos em ambientes regulatórios."
-              icon={<FlaskConical size={48} />}
+              icon={<FlaskConical size={48} className="text-[#d76512]" />}
             />
             <ServiceSection
               title="Soluções em Logística Integrada e Comércio Exterior"
               description="Oferecemos suporte logístico completo para transporte, consolidação de peças e apoio a importações/exportações. Isso garante rapidez e segurança em atendimentos que envolvem peças internacionais ou transporte técnico especializado."
-              icon={<Truck size={48} />}
+              icon={<Truck size={48} className="text-[#d76512]" />}
             />
           </div>
         </div>
@@ -176,15 +141,61 @@ const Services = () => {
       <section className="py-16 bg-white" id="testimonials">
         <div className="container-tennessine">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">O Que Nossos Clientes Dizem</h2>
-          <TestimonialsSection />
+          <div className="relative">
+            <Carousel className="w-full max-w-5xl mx-auto">
+              <CarouselContent>
+                {testimonials.map((testimonial, index) => (
+                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
+                    <div className="p-1">
+                      <Card className="bg-white border border-gray-200 rounded-xl shadow-md h-full">
+                        <CardContent className="p-6 flex flex-col h-full">
+                          <MessageSquare className="text-[#F5791F] mb-4 h-8 w-8" />
+                          <p className="text-gray-700 italic mb-6">"{testimonial.content}"</p>
+                          <div className="mt-auto">
+                            <p className="font-bold text-gray-900">{testimonial.author}</p>
+                            <p className="text-gray-500 text-sm">{testimonial.company}</p>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="text-[#d76512]" />
+              <CarouselNext className="text-[#d76512]" />
+            </Carousel>
+          </div>
         </div>
       </section>
 
-      {/* Gallery Section */}
+      {/* Gallery Section with updated navigation colors */}
       <section className="py-16 bg-[#FAFAFA]" id="gallery">
         <div className="container-tennessine">
           <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Galeria de Serviços</h2>
-          <GalleryCarousel />
+          <div className="relative">
+            <Carousel className="w-full max-w-5xl mx-auto">
+              <CarouselContent>
+                {galleryImages.map((img, i) => (
+                  <CarouselItem key={img.src} className="md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1">
+                      <Card className="overflow-hidden">
+                        <CardContent className="p-0 aspect-video">
+                          <img
+                            src={img.src}
+                            alt={img.alt}
+                            className="object-cover w-full h-full"
+                            draggable={false}
+                          />
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="text-[#d76512]" />
+              <CarouselNext className="text-[#d76512]" />
+            </Carousel>
+          </div>
         </div>
       </section>
 
@@ -198,9 +209,9 @@ const Services = () => {
               <p className="text-center mb-4 font-medium">Suporte essencial e monitoramento básico</p>
               <p className="text-center text-sm mb-6 text-gray-500">Ideal para demandas pontuais</p>
               <div className="mt-auto flex justify-center">
-                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
+                <Button onClick={scrollToComparison} className="bg-[#F5791F] hover:bg-[#E65A00] text-white">
                   Compare os Planos
-                </Link>
+                </Button>
               </div>
             </div>
             <div className="plan-card border-t-4 border-t-[#F5791F] scale-105 shadow-lg flex flex-col">
@@ -211,9 +222,9 @@ const Services = () => {
               <p className="text-center mb-4 font-medium">Atendimento preferencial + relatórios avançados</p>
               <p className="text-center text-sm mb-6 text-gray-500">Ideal para operação contínua</p>
               <div className="mt-auto flex justify-center">
-                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
+                <Button onClick={scrollToComparison} className="bg-[#F5791F] hover:bg-[#E65A00] text-white">
                   Compare os Planos
-                </Link>
+                </Button>
               </div>
             </div>
             <div className="plan-card flex flex-col">
@@ -221,9 +232,9 @@ const Services = () => {
               <p className="text-center mb-4 font-medium">Soluções personalizadas + consultoria técnica contínua</p>
               <p className="text-center text-sm mb-6 text-gray-500">Para estruturas exigentes e missão crítica</p>
               <div className="mt-auto flex justify-center">
-                <Link to="/services/plans" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-6 py-2.5 rounded-md font-medium transition-colors">
+                <Button onClick={scrollToComparison} className="bg-[#F5791F] hover:bg-[#E65A00] text-white">
                   Compare os Planos
-                </Link>
+                </Button>
               </div>
             </div>
           </div>
@@ -233,12 +244,11 @@ const Services = () => {
       {/* Contact Forms Section */}
       <section className="py-16 bg-[#FAFAFA]" id="contact">
         <div className="container-tennessine">
-          <h2 className="text-3xl font-bold text-center mb-12 text-[#000]">Entre em Contato</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
             <div className="bg-white rounded-lg shadow-md p-8 border border-[#E5E5E5]">
               <h3 className="text-xl font-bold mb-4 text-center">Escolha o Plano Ideal para Seu Laboratório</h3>
               <p className="mb-6 text-center text-gray-600">Solicite uma proposta personalizada com base nas suas necessidades e melhore a performance dos seus equipamentos.</p>
-              <form className="space-y-4">
+              <form onSubmit={handlePlanSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-[#333] mb-1">Nome *</label>
@@ -277,9 +287,9 @@ const Services = () => {
                   </select>
                 </div>
                 <div className="flex justify-center pt-4">
-                  <Link to="/services/plans#contact" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors">
+                  <Button type="submit" className="bg-[#F5791F] hover:bg-[#E65A00] text-white">
                     Quero escolher um plano
-                  </Link>
+                  </Button>
                 </div>
               </form>
             </div>

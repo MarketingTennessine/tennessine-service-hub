@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { useToast } from "@/hooks/use-toast";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PricingHero from "../components/service-plans/PricingHero";
@@ -8,6 +9,15 @@ import PricingCards from "../components/service-plans/PricingCards";
 import TermsAndCta from "../components/service-plans/TermsAndCta";
 
 const ServicePlans = () => {
+  const { toast } = useToast();
+  
+  const handlePlanRequest = () => {
+    const element = document.getElementById('plan-form');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -16,9 +26,11 @@ const ServicePlans = () => {
         <div className="container-tennessine">
           <ComparisonTable />
           <h2 className="text-3xl font-bold text-center mt-16 mb-10">Informações Comerciais</h2>
-          <PricingCards />
+          <PricingCards onRequestPlan={handlePlanRequest} />
           <p className="text-center text-gray-500 mt-6">Valores estimados anuais, sujeitos a variação conforme linha de equipamento e necessidades específicas.</p>
-          <TermsAndCta />
+          <div id="plan-form">
+            <TermsAndCta onRequestPlan={handlePlanRequest} />
+          </div>
         </div>
       </section>
       
