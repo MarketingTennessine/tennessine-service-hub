@@ -1,5 +1,6 @@
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Check } from "lucide-react";
 
 const ComparisonTable = () => {
   const comparisons = [
@@ -49,28 +50,28 @@ const ComparisonTable = () => {
 
   return (
     <div id="comparison-table" className="py-8">
-      <h2 className="text-3xl font-bold text-center mb-4">Compare nossos planos e escolha a solução ideal</h2>
-      <p className="text-center text-gray-600 mb-10">
+      <h2 className="text-3xl font-bold text-center mb-4 text-gray-900">Compare nossos planos e escolha a solução ideal</h2>
+      <p className="text-center text-gray-600 mb-10 max-w-3xl mx-auto">
         Planos desenvolvidos para garantir performance, segurança e suporte técnico especializado em cada etapa do seu processo.
       </p>
       
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto rounded-xl shadow-lg border border-gray-100">
         <Table>
           <TableHeader>
-            <TableRow>
-              <TableHead className="w-[200px]">Categoria</TableHead>
-              <TableHead>Starter</TableHead>
-              <TableHead>Standard</TableHead>
-              <TableHead>Premium</TableHead>
+            <TableRow className="bg-gradient-to-r from-[#d76512] to-[#f5a20a]">
+              <TableHead className="w-[200px] text-white font-semibold">Categoria</TableHead>
+              <TableHead className="text-white font-semibold">Starter</TableHead>
+              <TableHead className="text-white font-semibold">Standard</TableHead>
+              <TableHead className="text-white font-semibold">Premium</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
-            {comparisons.map((row) => (
-              <TableRow key={row.category}>
-                <TableCell className="font-medium">{row.category}</TableCell>
-                <TableCell>{row.starter}</TableCell>
-                <TableCell>{row.standard}</TableCell>
-                <TableCell>{row.premium}</TableCell>
+            {comparisons.map((row, index) => (
+              <TableRow key={row.category} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                <TableCell className="font-medium text-gray-900">{row.category}</TableCell>
+                <TableCell className="text-gray-700">{row.starter}</TableCell>
+                <TableCell className="text-gray-700 bg-orange-50">{row.standard}</TableCell>
+                <TableCell className="text-gray-700">{row.premium}</TableCell>
               </TableRow>
             ))}
           </TableBody>
