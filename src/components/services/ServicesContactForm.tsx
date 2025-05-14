@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { Textarea } from "@/components/ui/textarea";
 
 const ServicesContactForm = () => {
   const { toast } = useToast();
@@ -57,6 +58,13 @@ const ServicesContactForm = () => {
                   <option value="standard">Standard</option>
                   <option value="premium">Premium</option>
                 </select>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-[#333] mb-1">Linhas de Equipamentos / Informações Adicionais</label>
+                <Textarea 
+                  placeholder="Descreva as linhas de equipamentos para o plano ou outras informações relevantes..." 
+                  className="w-full px-4 py-2 border border-[#E5E5E5] rounded-md min-h-[120px]" 
+                />
               </div>
               <div className="flex justify-center pt-4">
                 <Button type="submit" className="bg-[#F5791F] hover:bg-[#E65A00] text-white">
