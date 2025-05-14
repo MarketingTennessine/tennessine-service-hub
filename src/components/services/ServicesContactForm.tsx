@@ -73,7 +73,7 @@ const ServicesContactForm = () => {
               Precisa de serviços pontuais ou um contrato personalizado? 
               Entre em contato através do nosso formulário específico no site oficial.
             </p>
-            <a href="https://tennessine.com.br/?route=checkout/cotacao_servicos" target="_blank" rel="noopener noreferrer" className="bg-[#F5791F] hover:bg-[#E65A00] text-white px-8 py-3 rounded-md font-semibold text-lg transition-colors">
+            <a href="https://tennessine.com.br/?route=checkout/cotacao_servicos" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white border-none">
               Quero solicitar um serviço
             </a>
           </div>
