@@ -1,7 +1,14 @@
 
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
-const ServicesPlans = ({ scrollToComparison }: { scrollToComparison: () => void }) => {
+const ServicesPlans = () => {
+  const navigate = useNavigate();
+
+  const navigateToPlans = () => {
+    navigate('/services/plans');
+  };
+
   return (
     <section className="py-16 bg-white" id="plans">
       <div className="container-tennessine">
@@ -12,7 +19,7 @@ const ServicesPlans = ({ scrollToComparison }: { scrollToComparison: () => void 
             <p className="text-center mb-4 font-medium">Suporte essencial e monitoramento básico</p>
             <p className="text-center text-sm mb-6 text-gray-500">Ideal para demandas pontuais</p>
             <div className="mt-auto flex justify-center">
-              <Button onClick={scrollToComparison} className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white border-none">
+              <Button onClick={navigateToPlans} className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white border-none">
                 Compare os Planos
               </Button>
             </div>
@@ -25,7 +32,7 @@ const ServicesPlans = ({ scrollToComparison }: { scrollToComparison: () => void 
             <p className="text-center mb-4 font-medium">Atendimento preferencial + relatórios avançados</p>
             <p className="text-center text-sm mb-6 text-gray-500">Ideal para operação contínua</p>
             <div className="mt-auto flex justify-center">
-              <Button onClick={scrollToComparison} className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white border-none">
+              <Button onClick={navigateToPlans} className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white border-none">
                 Compare os Planos
               </Button>
             </div>
@@ -35,7 +42,7 @@ const ServicesPlans = ({ scrollToComparison }: { scrollToComparison: () => void 
             <p className="text-center mb-4 font-medium">Soluções personalizadas + consultoria técnica contínua</p>
             <p className="text-center text-sm mb-6 text-gray-500">Para estruturas exigentes e missão crítica</p>
             <div className="mt-auto flex justify-center">
-              <Button onClick={scrollToComparison} className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white border-none">
+              <Button onClick={navigateToPlans} className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white border-none">
                 Compare os Planos
               </Button>
             </div>

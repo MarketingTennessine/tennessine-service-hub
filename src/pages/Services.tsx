@@ -10,13 +10,6 @@ import ServicesPlans from "../components/services/ServicesPlans";
 import ServicesContactForm from "../components/services/ServicesContactForm";
 
 const Services = () => {
-  const scrollToComparison = () => {
-    const element = document.getElementById('comparison-table');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -24,7 +17,7 @@ const Services = () => {
       <ServicesList />
       <ServicesTestimonials />
       <ServicesGallery />
-      <ServicesPlans scrollToComparison={scrollToComparison} />
+      <ServicesPlans />
       <ServicesContactForm />
       <WhatsAppButton />
       <Footer />
