@@ -1,10 +1,11 @@
+
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Textarea } from "@/components/ui/textarea";
+
 const ServicesContactForm = () => {
-  const {
-    toast
-  } = useToast();
+  const { toast } = useToast();
+
   const handlePlanSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     toast({
@@ -12,7 +13,9 @@ const ServicesContactForm = () => {
       description: "Em breve entraremos em contato."
     });
   };
-  return <section className="py-16 bg-[#FAFAFA]" id="contact">
+
+  return (
+    <section className="py-16 bg-[#FAFAFA]" id="contact">
       <div className="container-tennessine">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
           <div className="bg-white rounded-lg shadow-md p-8 border border-[#E5E5E5]">
@@ -73,12 +76,19 @@ const ServicesContactForm = () => {
               Precisa de serviços pontuais ou um contrato personalizado? 
               Entre em contato através do nosso formulário específico no site oficial.
             </p>
-            <a href="https://tennessine.com.br/?route=checkout/cotacao_servicos" target="_blank" rel="noopener noreferrer" className="">
+            <a 
+              href="https://tennessine.com.br/?route=checkout/cotacao_servicos" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-gradient-to-r from-[#d76512] to-[#f5a20a] hover:from-[#c25403] hover:to-[#e48f00] text-white px-6 py-2.5 rounded-md font-medium transition-colors duration-300"
+            >
               Quero solicitar um serviço
             </a>
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
+
 export default ServicesContactForm;
